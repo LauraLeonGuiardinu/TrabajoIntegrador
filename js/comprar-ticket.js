@@ -21,7 +21,11 @@ function quitarClaseError() {
         x[i].classList.remove('is-invalid');
     }
 }
-
+// Función para el botón Borrar para que borre el valor
+function reset_total_a_pagar() {
+    quitarClaseError();
+    totalPago.innerHTML = "";
+}
 // Cálculo total a pagar
 function total_a_pagar() {
 
@@ -82,29 +86,48 @@ function total_a_pagar() {
     let totalValorTickets = (cantidadTickets.value) * valorTicket;
 
     // Aplico descuentos según categoría
-    if (categoria.value == 0) {
-        totalValorTickets = totalValorTickets ;
-    }
-    if (categoria.value == 1) {
-        totalValorTickets = totalValorTickets - (descuentoEstudiante / 100 * totalValorTickets);
-    }
-    if (categoria.value == 2) {
-        totalValorTickets = totalValorTickets - (descuentoTrainee / 100 * totalValorTickets);
-    }
-    if (categoria.value == 3) {
-        totalValorTickets = totalValorTickets - (descuentoJunior / 100 * totalValorTickets);
+    let totalValorTickets
+    let DescuentoSegunCategoria
+    let totalValorTickets = (cantidadTickets.value)*valorTicket;
+
+    switch (DescuentoSegunCategoria) 
+    {
+    switch (categoria.value) 
+    { 
+        case "n":
+        document.write("totalValorTickets==totalValorTickets")
+        totalPago.innerHTML = (totalValorTickets = totalValorTickets);
+        break;
+
+        case"e":
+        document.write("totalValorTickets== (totalValorTickets - (descuentoEstudiante/100*totalValorTickets))")
+        totalPago.innerHTML = (totalValorTickets= (totalValorTickets - (descuentoEstudiante/100*totalValorTickets)))
+        break
+
+        case"t":
+        document.write("totalValorTickets== (totalValorTickets-(descuentoTrainee/100*totalValorTickets))")
+        totalPago.innerHTML = (totalValorTickets = (totalValorTickets-(descuentoTrainee/100*totalValorTickets)))
+        break;
+
+        case"j":
+        document.write("totalValorTickets==(totalValorTickets-(descuentoJunior/100*totalValorTickets))")
+        totalPago.innerHTML = (totalValorTickets =(totalValorTickets-(descuentoJunior/100*totalValorTickets)))
+        break;
+        default:
+        break;
+     }    
+
+    
+
+    totalPago.innerHTML=totalValorTickets;
     }
 
-    // Inserto el valor en el HTML
-    totalPago.innerHTML = totalValorTickets;
-}
+    btnResumen.addEventListener('click',total_a_pagar);
 
-// Botón Resumen recibe un escuchador y la funcion del cálculo
-btnResumen.addEventListener('click', total_a_pagar);
+    btnBorrar.addEventListener('click',reset_total_a_pagar);
+    
 
-// Función para el botón Borrar para que borre el valor
-function reset_total_a_pagar() {
-    quitarClaseError();
-    totalPago.innerHTML = "";
-}
-btnBorrar.addEventListener('click', reset_total_a_pagar);
+    
+
+
+
