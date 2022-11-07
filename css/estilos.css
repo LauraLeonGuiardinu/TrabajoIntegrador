@@ -1,11 +1,13 @@
-.colorFooter{
-    background-color:rgb(28, 66, 192);
-}
 *{
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+.container-fluid{ 
+    display: flex;
+    justify-content: center;
+    
+   }
 
 .bgColorGris{
     background-color: rgb(52, 50, 50);
@@ -226,6 +228,9 @@ align-items:center;
 width: 60%;
 text-align: right;
 color:white;
+}
+.colorFooter{
+    background-color:rgb(28, 66, 192);
 }
 @media screen and (max-width: 900px){
 .header__flex{
