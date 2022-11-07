@@ -1,6 +1,6 @@
 // Defino valor de ticket
 const valorTicket = 200;
-
+console.log (document.write("totalValorTickets==totalValorTickets"))
 // Defino porcentajes de descuento según categoría
 let descuentoEstudiante = 80;
 let descuentoTrainee    = 50;
